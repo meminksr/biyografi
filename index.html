@@ -17,6 +17,31 @@
     />
   </head>
   <body>
+    
+    <button id="scrollTopButton">↑</button>
+
+    <script>
+        const scrollTopButton = document.getElementById('scrollTopButton');
+
+        window.addEventListener('scroll', () => {
+            // Sayfa kaydırıldığında butonu göster veya gizle
+            if (window.scrollY > 300) {
+                scrollTopButton.style.display = 'block';
+            } else {
+                scrollTopButton.style.display = 'none';
+            }
+        });
+
+        scrollTopButton.addEventListener('click', () => {
+            // Butona tıklandığında sayfayı yukarı kaydır
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+
     <header class="header">
       <p class="header-left">MEHMET EMİN KESER</p>
       <div class="header-right">

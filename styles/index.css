@@ -288,3 +288,57 @@ button:hover {
   justify-content: center;
   align-items: center;
 }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 2000px; /* Sayfanın uzun olduğunu simüle etmek için */
+  background-color: #f4f4f4;
+}
+
+#scrollTopButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: none; /* Başlangıçta gizli */
+  z-index: 1000;
+}
+
+#scrollTopButton:hover {
+  background-color: #0056b3;
+}
+
+#scrollTopButton:active {
+  transform: scale(0.9);
+}
+
+#scrollTopButton::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+#scrollTopButton:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
